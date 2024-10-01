@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="table.css" />
+    </head>
+    <body>
+        <div id="body">
+            <img src="images/logo.png" alt="LOGO AEAN" />
+            <h1>Curso Profissional Técnico de Informática de Gestão</h1>
+            <div class="info">
+                <table>
+                    <colgroup span="3"></colgroup>
+                    <tr>
+                        <th>3333</th>
+                        <th>3333</th>
+                        <th>3333</th>
+                    </tr>
+                    <tr>
+                        <td>3333</td>
+                        <td>
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                        </td>
+                        <td>
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td>3333</td>
+                        <td>
+                            3333
+                            <br />
+                            3333
+                        </td>
+                        <td>
+                            3333
+                            <br />
+                            3333
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td>3333</td>
+                        <td>
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                        </td>
+                        <td>
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                            <br />
+                            3333
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td>3333</td>
+                        <td>3333</td>
+                        <td>3333</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td>3333</td>
+                        <td></td>
+                        <td>3333</td>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <a class="candbtn" onclick="openForm()">Enviar Candidatura</a>
+                    <a class="candbtn" href="index.html">Voltar</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h1>Candidatura</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="email" type="text" placeholder="Email (Aluno)" name="email" required>
+
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Nome (Aluno)" name="nome" required>
+
+                <label for="dob">Data de Nascimento</label>
+                <input id="dob" type="text" placeholder="Data de Nascimento" name="dob" required>
+                <br>
+                <button type="submit" class="btn">Enviar</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+            </form> 
+        </div>
+        <div id="container">
+            <div id="success-box">
+              <div class="dot"></div>
+              <div class="dot two"></div>
+              <div class="face">
+                <div class="eye"></div>
+                <div class="eye right"></div>
+                <div class="mouth happy"></div>
+              </div>
+              <div class="shadow scale"></div>
+              <div class="message"><h1 class="alert">Candidatura Enviada!</h1><p>Parabens! A Tua candidatura foi enviada com sucesso.</p></div>
+              <button class="button-box" onclick="closeNotification()"><h1 class="green">continuar</h1></button>
+            </div>
+            <div id="error-box">
+              <div class="dot"></div>
+              <div class="dot two"></div>
+              <div class="face2">
+                <div class="eye"></div>
+                <div class="eye right"></div>
+                <div class="mouth sad"></div>
+              </div>
+              <div class="shadow move"></div>
+              <div class="message"><h1 class="alert">Erro!</h1><p>Oops... Alguma coisa deu errado! Tenta novamente daqui a pouco ou contacta o nosso suporte!</div>
+              <button class="button-box" onclick="closeNotification()"><h1 class="red">tentar novamente</h1></button>
+            </div>
+          </div>
+    </body>
+    <script src="form.js"></script>
+</html>

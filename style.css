@@ -1,0 +1,104 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: black;
+}
+
+h1 {
+    margin: 5px;
+}
+
+.imagem-redonda {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: 150px;
+    border-radius: 50%; /* Define a borda como circular */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do círculo */
+    margin: 40px 0 40px 0;
+    border: 2px solid #000;
+}
+
+.imagem-redonda img {
+    width: 100%; /* Garante que a imagem preencha completamente o círculo */
+    height: auto;
+    display: block; /* Remove espaços extras sob a imagem */
+}
+
+.infoaluno {
+    margin: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info table {
+    border: 1px solid #000;
+    width: 120%;
+    
+}
+
+.info table tr td {
+    border: 1px solid #000;
+    background-color: #d6442d;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.info table th {
+    border: 1px solid #000;
+    background-color: #15ab92;
+    padding: 10px;
+}
+
+.candbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    background-color: #15ab92;
+    border-radius: 10px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ab1522;
+    border-radius: 20px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: black;
+    transition: ease-in-out 0.3s;
+}
+
+a:hover {
+    background-color: #d6442d;
+    color: black;
+    transition: ease-in-out 0.3s;
+}
+
+#status {
+    color: #00FF00
+    ;
+    text-decoration: underline;
+    text-align: center;
+}
