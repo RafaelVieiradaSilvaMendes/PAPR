@@ -45,6 +45,8 @@ body {
 }
 
 .candbtn {
+    width: 90%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +114,7 @@ td:last-child {
 .form-container {
     max-width: 600px;
     padding: 10px;
-    background-color: #15ab92;
+    background-color: #ffffff;
 }
 
 /* Full-width input fields */

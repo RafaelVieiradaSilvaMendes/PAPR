@@ -32,17 +32,33 @@ app.use(cors());
 
 app.post('/api/enviar-dados', (req, res) => {
     const { Nome_completo, data_de_nascimento, Ano, morada } = req.body;
+    console.log(req.body)
+    console.log(req.body.nome)
 
     // Realize as operações desejadas no banco de dados, por exemplo, inserção de dados
-    const query = 'INSERT INTO inscrições (Nome_completo, data_de_nascimento, Ano, morada) VALUES (?, ?, ?, ?, ?)';
-    pool.query(query, [Nome_completo, data_de_nascimento, Ano, morada], (error, results) => {
+    const query = 'INSERT INTO inscriçoes (Nome_completo, data_de_nascimento, Ano, morada) VALUES (?, ?, ?, ?)';
+    pool.query(query, [req.body.nome, req.body.data_de_nascimento, req.body.Ano, req.body.morada], (error, results) => {
         if (error) {
             console.error('Erro na inserção no MySQL:', error);
-            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+            res.status(500).json({ mensagem: 'Erro interno do servidor' + error });
         return;
         }
 
     res.json({ mensagem: 'Dados enviados com sucesso' });
+    });
+});
+
+app.get('/api/get-dados', (req, res) => {
+    // Realize as operações desejadas no banco de dados, por exemplo, inserção de dados
+    const query = 'SELECT * FROM inscriçoes';
+    pool.query(query, (error, result) => {
+        if (error) {
+            console.error('Erro na inserção no MySQL:', error);
+            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+            return;
+        }
+
+    res.json({ mensagem: result });
     });
 });
 

@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AfonsoCerqueira/CursosEscola.git"
+    "url": "git+https://github.com/rapina23/PAPR.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AfonsoCerqueira/CursosEscola/issues"
+    "url": "https://github.com/rapina23/PAPR/issues"
   },
-  "homepage": "https://github.com/AfonsoCerqueira/CursosEscola#readme",
+  "homepage": "https://github.com/rapina23/PAPR",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "express": "^4.21.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.9.1"
   }
