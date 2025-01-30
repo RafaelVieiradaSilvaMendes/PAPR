@@ -11,14 +11,21 @@ function closeForm() {
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.querySelector(".form-container");
-    const inputEmail = document.querySelector("#email");
     const inputNome = document.querySelector("#nome");
+    const inputEmail = document.querySelector("#email");
+    const inputTelefone = document.querySelector("#telefone")
+    const inputMorada = document.querySelector("#morada")
     const inputDOB = document.querySelector("#dob")
+    const inputCC = document.querySelector("#cc")
+    const inputContribuinte = document.querySelector("#contribuinte")
+    const inputAno = document.querySelector("#ano")
+    const inputCurso = document.querySelector("#curso")
+    const inputHabilitações = document.querySelector("#habilitações")
     const status = "pendente"
     const alert = document.querySelector(".alert")
 
-    function SendCand(email, nome, dob) {
-        console.log(email, nome, dob)
+    function SendCand(nome, email, telefone, morada, dob, cc, contribuinte, ano, curso, habilitações) {
+        console.log(nome, email, telefone, morada, dob, cc, contribuinte, ano, curso, habilitações)
 
         var date = new Date()
         var year = date.getFullYear()
@@ -34,7 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const dados = {
             nome: nome,
             email: email,
+            telefone: telefone,
+            morada: morada,
             dob: dob,
+            cc: cc,
+            contribuinte: contribuinte,
+            ano: ano,
+            curso: curso,
+            habilitações: habilitações,
             status: status,
             hora: FinalDate, 
         };
@@ -61,11 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const email = inputEmail.value;
         const nome = inputNome.value;
+        const email = inputEmail.value;
+        const telefone = inputTelefone.value;
+        const morada = inputMorada.value;
         const dob = inputDOB.value;
+        const cc = inputCC.value;
+        const contribuinte = inputContribuinte.value;
+        const ano = inputAno.value;
+        const curso = inputCurso.value;
+        const habilitações = inputHabilitações.value;
 
-        SendCand(email, nome, dob)
+        SendCand(nome, email, telefone, morada, dob, cc, contribuinte, ano, curso, habilitações)
     });
 })
 

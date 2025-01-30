@@ -4,11 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Perfil</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .thin-rectangle {
+                width: 1300px; /* Change to desired width */
+                height: 5px; /* Change to desired height (thinness) */
+                background-color: #000000; /* Set your desired color */
+                margin: 20px auto; /* Centers the rectangle horizontally */
+            }
+        </style>
+
     </head>
     <body>
-        <img src="images/logo.png" alt="LOGO AEAN" />
-        <h1>Curso Profissional Técnico de Informática de Gestão</h1>
+        <h1>InfoTrack</h1>
+        <div class="thin-rectangle"></div>
+        <h1>Cursos Profissionais da Escola Secundária António Nobre</h1>
         <div class="info">
             <table>    
                 <tr>
@@ -24,13 +34,13 @@
                 </tr>   
                 <tr>
                     <td>
-                        <a href="10ano.html">ver conteúdos</a> 
+                        <a class="candbtn" href="10ano.html">ver conteúdos</a> 
                     </td>
                     <td>
-                        <a href="11ano.html">ver conteúdos</a>
+                        <a class="candbtn" href="11ano.html">ver conteúdos</a>
                     </td>
                     <td>
-                        <a href="12ano.html">ver conteúdos</a>
+                        <a class="candbtn" href="12ano.html">ver conteúdos</a>
                     </td>
                 </tr>
             </table> 
@@ -39,3 +49,4 @@
     </body>
     <script src="index.js"></script>
 </html>
+ 

@@ -1,10 +1,12 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
+const bodyParser = require('body-parser');
+const cors = require('cors'); // Importa o pacote cors
 
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-// Configuração da conexão com o banco de dados
+// Configuração da conexão com o MySQL
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -25,11 +27,11 @@ pool.getConnection((err, connection) => {
 
 // Rota para buscar os cursos
 app.get('/api/cursos', (req, res) => {
-    const query = 'SELECT id, nome FROM cursos';
+    const query = 'SELECT id_curso, nome FROM cursos';
     db.query(query, (err, results) => {
         if (err) {
-            console.error('Erro ao executar a query:', err);
-            res.status(500).send('Erro no servidor');
+            console.error(err);
+            res.status(500).send('Erro ao buscar dados');
             return;
         }
         res.json(results);
@@ -37,6 +39,6 @@ app.get('/api/cursos', (req, res) => {
 });
 
 // Iniciar o servidor
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
 });

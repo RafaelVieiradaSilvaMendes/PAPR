@@ -31,13 +31,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/api/enviar-dados', (req, res) => {
-    const { Nome_completo, data_de_nascimento, Ano, morada } = req.body;
+    const { Nome_completo, email, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, Ano, id_curso, habilitações} = req.body;
     console.log(req.body)
     console.log(req.body.nome)
 
     // Realize as operações desejadas no banco de dados, por exemplo, inserção de dados
-    const query = 'INSERT INTO inscriçoes (Nome_completo, data_de_nascimento, Ano, morada) VALUES (?, ?, ?, ?)';
-    pool.query(query, [req.body.nome, req.body.data_de_nascimento, req.body.Ano, req.body.morada], (error, results) => {
+    const query = 'INSERT INTO inscriçoes (Nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, Ano, id_curso, habilitações) VALUES (?, ?, ?, ?)';
+    pool.query(query, [req.body.nome, req.body.email, req.body.telefone, req.body.morada, req.body.data_de_nascimento, req.body.Cartão_de_cidadão, req.body.contribuinte, req.body.Ano, req.body.id_curso, req.body.habilitações], (error, results) => {
         if (error) {
             console.error('Erro na inserção no MySQL:', error);
             res.status(500).json({ mensagem: 'Erro interno do servidor' + error });

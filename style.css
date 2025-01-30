@@ -1,15 +1,29 @@
 @import url("https://fonts.cdnfonts.com/css/poppins");
 
-body {
-    font-family: "Poppins", sans-serif;
+/* Full-screen background with animated dark gradient */
+body, html {
+    text-align: center;
+    height: 100%;
+    width: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
-    color: black;
-}
+    background: linear-gradient(45deg, #1a242f, #22303c, #0f3a3e, #133f43);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    font-size: 24px
+  }
+  
+  /* Keyframes for the gradient animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 h1 {
     margin: 5px;
@@ -43,13 +57,13 @@ h1 {
 
 .info table {
     border: 1px solid #000;
-    width: 120%;
+    width: 70%;
     
 }
 
 .info table tr td {
     border: 1px solid #000;
-    background-color: #d6442d;
+    background-color: #ffffff;
     padding: 10px;
     justify-content: center;
     align-items: center;
@@ -61,34 +75,48 @@ h1 {
     padding: 10px;
 }
 
+.button-container {
+    display: flex; /* Arrange buttons in a row */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+
 .candbtn {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 5px;
     background-color: #15ab92;
     border-radius: 10px;
     border: 1px solid #000;
     text-decoration: none;
     color: white;
+    width: 50%;
+    height: 10%;
 }
 
 a {
-    width: 90%;
-    height: 30%;
+    width: 50%;
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #ab1522;
+    background-color: #d63c3c;
     border-radius: 20px;
     border: 1px solid #000;
     text-decoration: none;
     color: black;
     transition: ease-in-out 0.3s;
 }
+.Linha {
+    text-align: center;
+    width: 100000%;
+    height: 2%;
+}
+
 
 a:hover {
     background-color: #d6442d;

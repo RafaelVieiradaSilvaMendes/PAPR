@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/rapina23/PAPR",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "cors": "^2.8.5",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.9.1"
   }
