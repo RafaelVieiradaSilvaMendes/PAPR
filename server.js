@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/api/enviar-dados', (req, res) => {
-    const { Nome_completo, email, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, Ano, id_curso, habilitações} = req.body;
+    const { nome_completo, email, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações} = req.body;
     console.log(req.body)
     console.log(req.body.nome)
 
