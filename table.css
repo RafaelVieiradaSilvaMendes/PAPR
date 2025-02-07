@@ -4,8 +4,8 @@
 body, html {
     text-align: center;
     height: 100%;
-    width: 120%;
-    margin: 0;
+    width: 100%;
+    margin: auto;
     background: linear-gradient(45deg, #1a242f, #22303c, #0f3a3e, #133f43);
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
@@ -29,6 +29,12 @@ h1 {
     margin: 5px;
 }
 
+.thin-rectangle {
+    width: 1500px; /* Change to desired width */
+    height: 5px; /* Change to desired height (thinness) */
+    background-color: #000000; /* Set your desired color */
+    margin: 20px auto; /* Centers the rectangle horizontally */
+}
 
 .info {
     display: flex;
@@ -124,6 +130,12 @@ td:last-child {
     bottom: 50px;
 }
 
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Add styles to the form container */
 .form-container {
     width: 60%;
@@ -131,7 +143,8 @@ td:last-child {
     background-color: #ffffff00;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Full-width input fields */
@@ -158,11 +171,6 @@ td:last-child {
     width: 100%;
     margin-bottom:10px;
     opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-    background-color: red;
 }
 
 /* Add some hover effects to buttons */
@@ -251,7 +259,7 @@ button, .dot {
     top: 4%;
     right: 6%;
     &:hover {
-        background: #FCFCFC;
+    background: #FCFCFC;
     }
 }
 

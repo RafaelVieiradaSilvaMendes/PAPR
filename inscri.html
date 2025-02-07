@@ -5,14 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="table.css" />
-        <style>
-          .thin-rectangle {
-              width: 1300px; /* Change to desired width */
-              height: 5px; /* Change to desired height (thinness) */
-              background-color: #000000; /* Set your desired color */
-              margin: 20px auto; /* Centers the rectangle horizontally */
-          }
-      </style>
     </head>
     <script>
       async function carregarCursos() {
@@ -44,6 +36,8 @@
         <h1>InfoTrack</h1>
         <div class="thin-rectangle"></div>
         <div class="form-popup" id="myForm"></div>
+        <div class="container-center">
+
             <form class="form-container">
                 <h1>Candidatura</h1>
 
@@ -100,33 +94,12 @@
                 
                 <br>
             </form>
-            <button type="submit" class="candbtn">Enviar</button>
-              <div class="buttons">
-                <a class="candbtn" href="index.html">Voltar</a>
-              </div>
-              <script>
-                document.getElementById('submitButton').addEventListener('click', async () => {
-                    const form = document.getElementById('infoForm');
-                    const formData = new FormData(form);
-        
-                    // Convert FormData to JSON object
-                    const data = {};
-                    formData.forEach((value, key) => (data[key] = value));
-        
-                    // Send to backend
-                    const response = await fetch('/submit', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data),
-                    });
-        
-                    if (response.ok) {
-                        alert('Data submitted successfully!');
-                    } else {
-                        alert('Error submitting data.');
-                    }
-                });
-            </script> 
+        </div>
+            <div class="buttons">
+               <a class="candbtn" onclick="openForm()">Enviar Candidatura</a>
+               <a class="candbtn" href="index.html">Voltar</a>
+             </div>
+              
         </div>
         <div id="container">
             <div id="success-box">

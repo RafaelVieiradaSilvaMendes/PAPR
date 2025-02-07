@@ -62,6 +62,50 @@ app.get('/api/get-dados', (req, res) => {
     });
 });
 
+app.get('/api/cursos', (req, res) => {
+    const query = 'SELECT id_curso, nome FROM cursos';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Erro ao buscar dados');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+app.post('/submit', (req, res) => {
+    const data = req.body;
+
+    const query = `
+        INSERT INTO inscrições (nome, email, telefone, morada, data_de_nascimento, Cartão_de_cidadão, contribuinte, Ano, curso, habilitações)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    const values = [
+        data.nome,
+        data.email,
+        data.telefone,
+        data.morada,
+        data.data_de_nascimento,
+        data.cartao_de_cidadao,
+        data.contribuinte,
+        data.ano,
+        data.curso,
+        data.habilitacoes,
+    ];
+
+    db.query(query, values, (err, result) => {
+        if (err) {
+            console.error('Error inserting data:', err);
+            res.status(500).send('Error inserting data.');
+            return;
+        }
+
+        res.status(200).send('Data inserted successfully.');
+    });
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
