@@ -5,6 +5,9 @@ const cors = require('cors'); // Importa o pacote cors
 
 const app = express();
 const port = 3000;
+app.use(express.json)
+app.use(cors());
+
 
 // Configuração da conexão com o MySQL
 const pool = mysql.createPool({
@@ -31,13 +34,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/api/enviar-dados', (req, res) => {
-    const { nome_completo, email, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações} = req.body;
+    const { nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações} = req.body;
     console.log(req.body)
     console.log(req.body.nome)
 
     // Realize as operações desejadas no banco de dados, por exemplo, inserção de dados
     const query = 'INSERT INTO inscriçoes (Nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, Ano, id_curso, habilitações) VALUES (?, ?, ?, ?)';
-    pool.query(query, [req.body.nome, req.body.email, req.body.telefone, req.body.morada, req.body.data_de_nascimento, req.body.Cartão_de_cidadão, req.body.contribuinte, req.body.Ano, req.body.id_curso, req.body.habilitações], (error, results) => {
+    pool.query(query, [nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações], (error, results) => {
         if (error) {
             console.error('Erro na inserção no MySQL:', error);
             res.status(500).json({ mensagem: 'Erro interno do servidor' + error });
@@ -64,7 +67,7 @@ app.get('/api/get-dados', (req, res) => {
 
 app.get('/api/cursos', (req, res) => {
     const query = 'SELECT id_curso, nome FROM cursos';
-    db.query(query, (err, results) => {
+    pool.query(query, (err, results) => {
         if (err) {
             console.error(err);
             res.status(500).send('Erro ao buscar dados');
@@ -95,7 +98,7 @@ app.post('/submit', (req, res) => {
         data.habilitacoes,
     ];
 
-    db.query(query, values, (err, result) => {
+    pool.query(query, values, (err, result) => {
         if (err) {
             console.error('Error inserting data:', err);
             res.status(500).send('Error inserting data.');
