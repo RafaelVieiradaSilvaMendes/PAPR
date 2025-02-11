@@ -31,102 +31,113 @@
       // Carregar os cursos ao carregar a página
       window.onload = carregarCursos;
   </script>
-</head>    
-    <body id="body">
-        <h1>InfoTrack</h1>
-        <div class="thin-rectangle"></div>
-        <div class="form-popup" id="myForm"></div>
-        <div class="container-center">
+    <body>   
+        <div id="body">
+            <h1>InfoTrack</h1>
+            <div class="thin-rectangle"></div>
+            <div class="container-center">
+            
+                <form class="form-container">
+                    <h1>Candidatura</h1>
 
-            <form class="form-container">
-                <h1>Candidatura</h1>
+                    <label for="nome"><b>Nome</b></label>
+                    <input id="nome" type="text" placeholder="Nome (Aluno)" name="nome" required>
 
-                <label for="nome"><b>Nome</b></label>
-                <input id="nome" type="text" placeholder="Nome (Aluno)" name="nome" required>
+                    <label for="email">Email</label>
+                    <input id="email" type="text" placeholder="Email (Aluno)" name="nome" required>
 
-                <label for="email">Email</label>
-                <input id="email" type="text" placeholder="Email (Aluno)" name="nome" required>
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" type="text" placeholder="telefone (Aluno)" name="telefone" required>
 
-                <label for="telefone">Telefone</label>
-                <input id="telefone" type="text" placeholder="telefone (Aluno)" name="telefone" required>
+                    <label for="morada">Morada</label>
+                    <input id="morada" type="text" placeholder="Morada" name="morada" required>
 
-                <label for="morada">Morada</label>
-                <input id="morada" type="text" placeholder="Morada" name="morada" required>
+                    <label for="dob">Data de nascimento</label>
+                    <form action="/submit-date" method="post">
+                    <input type="date" id="dob" name="dob">
 
-                <label for="dob">Data de nascimento</label>
-                <form action="/submit-date" method="post">
-                  <input type="date" id="dob" name="dob">
+                    <label for="cc">Cartão de cidadão</label>
+                    <input id="cc" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
 
-                <label for="cc">Cartão de cidadão</label>
-                <input id="cc" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
+                    <label for="contribuinte">Contribuinte</label>
+                    <input id="contribuinte" type="text" placeholder="Contrinuinte (Aluno)" name="contribuinte" required>
 
-                <label for="contribuinte">Contribuinte</label>
-                <input id="contribuinte" type="text" placeholder="Contrinuinte (Aluno)" name="contribuinte" required>
+                    <label for="ano">Ano</label>
+                    <input id="ano" type="text" placeholder="Ano" name="ano" required>
 
-                <label for="ano">Ano</label>
-                <input id="ano" type="text" placeholder="Ano" name="ano" required>
+                    <label for="habilitações">Habilitações</label>
+                    <input id="habilitações" type="text" placeholder="Habilitações" name="habilitações" required>
+                                
+                    <label for="curso-select">Cursos:</label>
+                    <select id="curso-select">
+                        <option value="">-- Selecionar curso --</option>
+                    </select>
 
-                <label for="habilitações">Habilitações</label>
-                <input id="habilitações" type="text" placeholder="Habilitações" name="habilitações" required>
-                              
-                <label for="curso-select">Cursos:</label>
-                <select id="curso-select">
-                    <option value="">-- Selecionar curso --</option>
-                </select>
+                    <script>
+                        // Load the JSON data and populate the select element
+                        fetch('cursos.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                const select = document.getElementById('curso-select');
 
-                <script>
-                    // Load the JSON data and populate the select element
-                    fetch('cursos.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            const select = document.getElementById('curso-select');
-
-                            // Iterate over the data to create options
-                            data.forEach(curso => {
-                                const option = document.createElement('option');
-                                option.value = curso.id_curso; // Set the value to the curso ID
-                                option.textContent = curso.nome; // Set the text to the curso name
-                                select.appendChild(option);
-                            });
-                        })
-                        .catch(error => console.error('Error loading cursos.json:', error));
-                </script>
-                
-                <br>
-            </form>
+                                // Iterate over the data to create options
+                                data.forEach(curso => {
+                                    const option = document.createElement('option');
+                                    option.value = curso.id_curso; // Set the value to the curso ID
+                                    option.textContent = curso.nome; // Set the text to the curso name
+                                    select.appendChild(option);
+                                });
+                            })
+                            .catch(error => console.error('Error loading cursos.json:', error));
+                    </script>
+                    
+                    <br>
+                </form>
         </div>
-            <div class="buttons">
-               <a class="candbtn" onclick="openForm()">Enviar Candidatura</a>
-               <a class="candbtn" href="index.html">Voltar</a>
-             </div>
-              
+                <div class="info">
+                <div class="buttons">
+                    <a class="candbtn" onclick="openForm()">Enviar Candidatura</a>
+                    <a class="candbtn" href="index.html">Voltar</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-popup" id="myForm">
+            <div class="info">
+            <form class="form-container">
+                <h1>Tem a certeza que quer enviar a candidatura?</h1>
+                <br>
+                <button type="submit" class="Enviarbtn">Enviar</button>
+                <button type="button" class="Voltarbtn" onclick="closeForm()">Fechar</button>
+            </form>
+            </div> 
         </div>
         <div id="container">
             <div id="success-box">
-              <div class="dot"></div>
-              <div class="dot two"></div>
-              <div class="face">
+            <div class="dot"></div>
+            <div class="dot two"></div>
+            <div class="face">
                 <div class="eye"></div>
                 <div class="eye right"></div>
                 <div class="mouth happy"></div>
-              </div>
-              <div class="shadow scale"></div>
-              <div class="message"><h1 class="alert">Candidatura Enviada!</h1><p>Parabens! A Tua candidatura foi enviada com sucesso.</p></div>
-              <button class="button-box" onclick="closeNotification()"><h1 class="green">continuar</h1></button>
+            </div>
+            <div class="shadow scale"></div>
+            <div class="message"><h1 class="alert">Candidatura Enviada!</h1><p>Parabens! A Tua candidatura foi enviada com sucesso.</p></div>
+            <button class="button-box" onclick="closeNotification()"><h1 class="green">continuar</h1></button>
             </div>
             <div id="error-box">
-              <div class="dot"></div>
-              <div class="dot two"></div>
-              <div class="face2">
+            <div class="dot"></div>
+            <div class="dot two"></div>
+            <div class="face2">
                 <div class="eye"></div>
                 <div class="eye right"></div>
                 <div class="mouth sad"></div>
-              </div>
-              <div class="shadow move"></div>
-              <div class="message"><h1 class="alert">Erro!</h1><p>Oops... Alguma coisa deu errado! Tenta novamente daqui a pouco ou contacta o nosso suporte!</div>
-              <button class="button-box" onclick="closeNotification()"><h1 class="red">tentar novamente</h1></button>
             </div>
-          </div>
+            <div class="shadow move"></div>
+            <div class="message"><h1 class="alert">Erro!</h1><p>Oops... Alguma coisa deu errado! Tenta novamente daqui a pouco ou contacta o nosso suporte!</div>
+            <button class="button-box" onclick="closeNotification()"><h1 class="red">tentar novamente</h1></button>
+            </div>
+        </div>
     </body>
     <script src="form.js"></script>
 </html>

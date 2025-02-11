@@ -1,5 +1,5 @@
 function openForm() {
-    
+    document.getElementById("myForm").style.display = "blur(6px)";
     document.getElementById("myForm").style.display = "block";
 }
 

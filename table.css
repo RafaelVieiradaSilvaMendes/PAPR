@@ -67,12 +67,12 @@ h1 {
     width: 50%;
     height: 10%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
     padding: 20px;
     margin: 20px;
-    background-color: #15ab92;
+    background-color: rgb(64, 202, 226);
     border-radius: 10px;
     border: 1px solid #000;
     text-decoration: none;
@@ -87,11 +87,59 @@ h1 {
     align-items: center;
 }
 
+.Enviarbtn {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(0, 255, 0);
+    border-radius: 10px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: black;
+    transition: ease-in-out 0.3s;
+}
+
+.Enviarbtn:hover {
+    background-color: rgb(68, 214, 45);
+    color: black;
+    transition: ease-in-out 0.3s;
+    align-items: center;
+}
+
+.Voltarbtn {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: black;
+    transition: ease-in-out 0.3s;
+}
+
+.Voltarbtn:hover {
+    background-color: rgb(214, 68, 45);
+    color: black;
+    transition: ease-in-out 0.3s;
+    align-items: center;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: row;
     margin-right: 20px;
     padding: 20px;
     transition: ease-in-out 0.3s;
@@ -124,6 +172,7 @@ td:last-child {
 }
 
 .form-popup {
+    width: 60%;
     display: none;
     position: fixed;
     border: 3px solid #f1f1f1;
@@ -258,10 +307,8 @@ button, .dot {
     position: absolute;
     top: 4%;
     right: 6%;
-    &:hover {
-    background: #FCFCFC;
     }
-}
+    
 
 .two {
     right: 12%;
@@ -371,12 +418,11 @@ button, .dot {
     border: none;
     box-shadow: 2px 2px 10px rgba(#777777, .5);
     transition: all .5s ease-in-out;
-    &:hover {
-        background: #FCFCFC;
-        transform: scale(1.05);
-        transition: all .3s ease-in-out;
+    background: #FCFCFC;
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
     }
-}
+
 
 @keyframes bounce {
     50% {
@@ -416,4 +462,3 @@ button, .dot {
         left: 25%;
     }
 }
-

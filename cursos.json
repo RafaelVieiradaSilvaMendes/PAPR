@@ -2,5 +2,9 @@
   {
     "id_curso": "1",
     "nome": "Curso Profissional Técnico de Informática de Gestão"
+  },
+  {
+    "id_curso": "2",
+    "nome": "curso lalala"
   }
 ]
