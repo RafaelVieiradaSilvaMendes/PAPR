@@ -37,11 +37,11 @@
             <div class="thin-rectangle"></div>
             <div class="container-center">
             
-                <form class="form-container">
+                <form class="form-container" id="formInscricao">
                     <h1>Candidatura</h1>
 
                     <label for="nome"><b>Nome</b></label>
-                    <input id="nome" type="text" placeholder="Nome (Aluno)" name="nome" required>
+                    <input id="nome_completo" type="text" placeholder="Nome (Aluno)" name="nome" required>
 
                     <label for="email">Email</label>
                     <input id="email" type="text" placeholder="Email (Aluno)" name="nome" required>
@@ -52,24 +52,35 @@
                     <label for="morada">Morada</label>
                     <input id="morada" type="text" placeholder="Morada" name="morada" required>
 
-                    <label for="dob">Data de nascimento</label>
+                    <label for="data_de_nascimento">Data de nascimento</label>
                     <form action="/submit-date" method="post">
-                    <input type="date" id="dob" name="dob">
+                    <input type="date" id="data_de_nascimento" name="dob">
 
-                    <label for="cc">Cartão de cidadão</label>
-                    <input id="cc" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
+                    <label for="cartão_de_cidadão">Cartão de cidadão</label>
+                    <input id="cartão_de_cidadão" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
+                    <script>
+                        document.getElementById("cartão_de_cidadão").addEventListener("input", function () {
+                          if (this.value.length > 8) {
+                            this.value = this.value.slice(0, 8);
+                          }
+                        });
+                      </script>
 
                     <label for="contribuinte">Contribuinte</label>
                     <input id="contribuinte" type="text" placeholder="Contrinuinte (Aluno)" name="contribuinte" required>
+                    <script>
+                        document.getElementById("contribuinte").addEventListener("input", function () {
+                          if (this.value.length > 9) {
+                            this.value = this.value.slice(0, 9);
+                          }
+                        });
+                      </script>
 
                     <label for="ano">Ano</label>
                     <input id="ano" type="text" placeholder="Ano" name="ano" required>
-
-                    <label for="habilitações">Habilitações</label>
-                    <input id="habilitações" type="text" placeholder="Habilitações" name="habilitações" required>
-                                
-                    <label for="curso-select">Cursos:</label>
-                    <select id="curso-select">
+                    
+                    <label for="id_curso">Cursos:</label>
+                    <select id="id_curso" name="curso" required>
                         <option value="">-- Selecionar curso --</option>
                     </select>
 
@@ -78,7 +89,7 @@
                         fetch('cursos.json')
                             .then(response => response.json())
                             .then(data => {
-                                const select = document.getElementById('curso-select');
+                                const select = document.getElementById('id_curso');
 
                                 // Iterate over the data to create options
                                 data.forEach(curso => {
@@ -89,53 +100,69 @@
                                 });
                             })
                             .catch(error => console.error('Error loading cursos.json:', error));
+                            
                     </script>
-                    
-                    <br>
-                </form>
+
+                    <label for="habilitações">Habilitações</label>
+                    <input id="habilitações" type="text" placeholder="Habilitações" name="habilitações" required>
+                
         </div>
                 <div class="info">
-                <div class="buttons">
-                    <a class="candbtn" onclick="openForm()">Enviar Candidatura</a>
-                    <a class="candbtn" href="index.html">Voltar</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-popup" id="myForm">
-            <div class="info">
-            <form class="form-container">
-                <h1>Tem a certeza que quer enviar a candidatura?</h1>
-                <br>
-                <button type="submit" class="Enviarbtn">Enviar</button>
-                <button type="button" class="Voltarbtn" onclick="closeForm()">Fechar</button>
-            </form>
-            </div> 
-        </div>
-        <div id="container">
-            <div id="success-box">
-            <div class="dot"></div>
-            <div class="dot two"></div>
-            <div class="face">
-                <div class="eye"></div>
-                <div class="eye right"></div>
-                <div class="mouth happy"></div>
-            </div>
-            <div class="shadow scale"></div>
-            <div class="message"><h1 class="alert">Candidatura Enviada!</h1><p>Parabens! A Tua candidatura foi enviada com sucesso.</p></div>
-            <button class="button-box" onclick="closeNotification()"><h1 class="green">continuar</h1></button>
-            </div>
-            <div id="error-box">
-            <div class="dot"></div>
-            <div class="dot two"></div>
-            <div class="face2">
-                <div class="eye"></div>
-                <div class="eye right"></div>
-                <div class="mouth sad"></div>
-            </div>
-            <div class="shadow move"></div>
-            <div class="message"><h1 class="alert">Erro!</h1><p>Oops... Alguma coisa deu errado! Tenta novamente daqui a pouco ou contacta o nosso suporte!</div>
-            <button class="button-box" onclick="closeNotification()"><h1 class="red">tentar novamente</h1></button>
+                    <button type="submit" class="candbtn">enviar Candidatura</button>
+                </div>      
+                </form>         
+                    <script>
+                        document.getElementById("formInscricao").addEventListener("submit", function(event) {
+                        event.preventDefault(); // Evita recarregar a página
+
+                        // Capturar os dados do formulário
+                        const nome_completo = document.getElementById("nome_completo").value.trim();
+                        const email = document.getElementById("email").value.trim();
+                        const telefone = document.getElementById("telefone").value.trim();
+                        const morada = document.getElementById("morada").value.trim();
+                        const data_de_nascimento = document.getElementById("data_de_nascimento").value.trim();
+                        const cartão_de_cidadão = document.getElementById("cartão_de_cidadão").value.trim();
+                        const contribuinte = document.getElementById("contribuinte").value.trim();
+                        const ano = document.getElementById("ano").value.trim();
+                        const id_curso = document.getElementById("id_curso").value.trim();
+                        const habilitações = document.getElementById("habilitações").value.trim();
+
+                        // Verifica se todos os campos estão preenchidos
+                        if (!nome_completo || !email || !telefone || !morada || !data_de_nascimento || 
+                            !cartão_de_cidadão || !contribuinte || !ano || !id_curso || !habilitações) {
+                            document.getElementById("mensagem").innerText = "Preencha todos os campos!";
+                            return;
+                        }
+
+                        // Criar um objeto com os dados
+                        const dados = { 
+                            nome_completo, email, telefone, morada, data_de_nascimento, 
+                            cartão_de_cidadão, contribuinte, ano, id_curso, habilitações
+                        };
+
+                        // Enviar os dados para o servidor
+                        fetch("http://localhost:3000/inscrever", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(dados)
+                        })
+                        .then(response => response.json())  // Verifica se a resposta está em JSON
+                        .then(data => {
+                            document.getElementById("mensagem").innerText = data.message; // Exibe a resposta
+                            document.getElementById("formInscricao").reset(); // Limpa o formulário
+                        })
+                        .catch(error => {
+                            console.error("Erro ao enviar:", error);
+                            document.getElementById("mensagem").innerText = "Erro ao enviar inscrição!";
+                        });
+                    });
+
+                    </script>
+                    <div class="info">
+                        <a class="candbtn" href="index.html">Voltar</a>
+                    </div>
             </div>
         </div>
     </body>

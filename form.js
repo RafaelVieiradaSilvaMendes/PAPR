@@ -11,21 +11,21 @@ function closeForm() {
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.querySelector(".form-container");
-    const inputNome = document.querySelector("#nome");
+    const inputNome_completo = document.querySelector("#nome_completo");
     const inputEmail = document.querySelector("#email");
     const inputTelefone = document.querySelector("#telefone")
     const inputMorada = document.querySelector("#morada")
-    const inputDOB = document.querySelector("#dob")
-    const inputCC = document.querySelector("#cc")
+    const inputdata_de_nascimento = document.querySelector("#data_de_nascimento")
+    const inputcartão_de_cidadão = document.querySelector("#cartão_de_cidadão")
     const inputContribuinte = document.querySelector("#contribuinte")
     const inputAno = document.querySelector("#ano")
-    const inputCurso = document.querySelector("#curso")
+    const inputCurso = document.querySelector("#id_curso")
     const inputHabilitações = document.querySelector("#habilitações")
     const status = "pendente"
     const alert = document.querySelector(".alert")
 
-    function SendCand(nome, email, telefone, morada, dob, cc, contribuinte, ano, curso, habilitações) {
-        console.log(nome, email, telefone, morada, dob, cc, contribuinte, ano, curso, habilitações)
+    function SendCand(nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações) {
+        console.log(nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações)
 
         var date = new Date()
         var year = date.getFullYear()
@@ -39,21 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(FinalDate)
 
         const dados = {
-            nome: nome,
+            nome_completo: nome_completo,
             email: email,
             telefone: telefone,
             morada: morada,
-            dob: dob,
-            cc: cc,
+            data_de_nascimento: data_de_nascimento,
+            cartão_de_cidadão: cartão_de_cidadão,
             contribuinte: contribuinte,
             ano: ano,
-            curso: curso,
+            id_curso: id_curso,
             habilitações: habilitações,
             status: status,
             hora: FinalDate, 
         };
 
-        fetch('http://localhost:3000/api/enviar-dados', {
+        fetch('http://localhost:3000/api/inscrever', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -75,18 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const nome = inputNome.value;
+        const nome_completo = inputNome_completo.value;
         const email = inputEmail.value;
         const telefone = inputTelefone.value;
         const morada = inputMorada.value;
-        const dob = inputDOB.value;
-        const cc = inputCC.value;
+        const data_de_nascimento = inputdata_de_nascimento.value;
+        const cartão_de_cidadão = inputcartão_de_cidadão.value;
         const contribuinte = inputContribuinte.value;
         const ano = inputAno.value;
-        const curso = inputCurso.value;
+        const id_curso = inputCurso.value;
         const habilitações = inputHabilitações.value;
 
-        SendCand(nome, email, telefone, morada, dob, cc, contribuinte, ano, curso, habilitações)
+        SendCand(nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações)
     });
 })
 
