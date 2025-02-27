@@ -56,10 +56,10 @@
                     <form action="/submit-date" method="post">
                     <input type="date" id="data_de_nascimento" name="dob">
 
-                    <label for="cartão_de_cidadão">Cartão de cidadão</label>
-                    <input id="cartão_de_cidadão" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
+                    <label for="cartao_de_cidadao">Cartão de cidadão</label>
+                    <input id="cartao_de_cidadao" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
                     <script>
-                        document.getElementById("cartão_de_cidadão").addEventListener("input", function () {
+                        document.getElementById("cartao_de_cidadao").addEventListener("input", function () {
                           if (this.value.length > 8) {
                             this.value = this.value.slice(0, 8);
                           }
@@ -103,53 +103,59 @@
                             
                     </script>
 
-                    <label for="habilitações">Habilitações</label>
-                    <input id="habilitações" type="text" placeholder="Habilitações" name="habilitações" required>
+                    <label for="habilitacoes">habilitações</label>
+                    <input id="habilitacoes" type="text" placeholder="habilitacoes" name="habilitacoes" required>
                 
         </div>
-                <div class="info">
-                    <button type="submit" class="candbtn">enviar Candidatura</button>
-                </div>      
-                </form>         
-                    <script>
-                        document.getElementById("formInscricao").addEventListener("submit", function(event) {
+                    <div class="info">
+                        <button type="submit" class="candbtn">Enviar Candidatura</button>
+                    </div>
+                </form>
+                
+                <p id="mensagem"></p>
+                
+                <script>
+                    document.getElementById("formInscricao").addEventListener("submit", function(event) {
                         event.preventDefault(); // Evita recarregar a página
-
+                
                         // Capturar os dados do formulário
                         const nome_completo = document.getElementById("nome_completo").value.trim();
                         const email = document.getElementById("email").value.trim();
                         const telefone = document.getElementById("telefone").value.trim();
                         const morada = document.getElementById("morada").value.trim();
                         const data_de_nascimento = document.getElementById("data_de_nascimento").value.trim();
-                        const cartão_de_cidadão = document.getElementById("cartão_de_cidadão").value.trim();
+                        const cartao_de_cidadao = document.getElementById("cartao_de_cidadao").value.trim();
                         const contribuinte = document.getElementById("contribuinte").value.trim();
                         const ano = document.getElementById("ano").value.trim();
                         const id_curso = document.getElementById("id_curso").value.trim();
-                        const habilitações = document.getElementById("habilitações").value.trim();
-
+                        const habilitacoes = document.getElementById("habilitacoes").value.trim();
+                
                         // Verifica se todos os campos estão preenchidos
                         if (!nome_completo || !email || !telefone || !morada || !data_de_nascimento || 
-                            !cartão_de_cidadão || !contribuinte || !ano || !id_curso || !habilitações) {
+                            !cartao_de_cidadao || !contribuinte || !ano || !id_curso || !habilitacoes) {
                             document.getElementById("mensagem").innerText = "Preencha todos os campos!";
                             return;
                         }
+                
+                         // Debug para ver os dados no console
 
-                        // Criar um objeto com os dados
-                        const dados = { 
-                            nome_completo, email, telefone, morada, data_de_nascimento, 
-                            cartão_de_cidadão, contribuinte, ano, id_curso, habilitações
-                        };
-
+                         console.log(cartao_de_cidadao)
+                
                         // Enviar os dados para o servidor
                         fetch("http://localhost:3000/inscrever", {
                             method: "POST",
                             headers: {
-                                "Content-Type": "application/json"
+                                "Content-Type": "application/json",
+                                "Accept": "application/json"
                             },
-                            body: JSON.stringify(dados)
+                            body: JSON.stringify({
+                                nome_completo, email, telefone, morada, data_de_nascimento, 
+                                cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes
+                            })
                         })
                         .then(response => response.json())  // Verifica se a resposta está em JSON
                         .then(data => {
+                            console.log("Resposta do servidor:", data);
                             document.getElementById("mensagem").innerText = data.message; // Exibe a resposta
                             document.getElementById("formInscricao").reset(); // Limpa o formulário
                         })
@@ -158,8 +164,7 @@
                             document.getElementById("mensagem").innerText = "Erro ao enviar inscrição!";
                         });
                     });
-
-                    </script>
+                </script>
                     <div class="info">
                         <a class="candbtn" href="index.html">Voltar</a>
                     </div>

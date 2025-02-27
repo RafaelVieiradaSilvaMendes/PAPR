@@ -1,10 +1,9 @@
 [
   {
-    "id_curso": "1",
-    "nome": "Curso Profissional Técnico de Informática de Gestão"
-  },
-  {
-    "id_curso": "2",
-    "nome": "curso lalala"
+    "id_curso": 1,
+    "nome": "Curso Profissional Técnico de Informática de Gestão",
+    "saídas profissionais": "fdgfh",
+    "carga horária": 15325,
+    "ano": 10
   }
 ]

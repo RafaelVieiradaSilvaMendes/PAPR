@@ -31,17 +31,16 @@ pool.getConnection((err, connection) => {
 
 // Rota para inserir dados no banco
 app.post("/inscrever", (req, res) => {
-    const { nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações } = req.body;
+    const { nome_completo, email, telefone, morada, data_de_nascimento, cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes } = req.body;
     console.log("aloo")
-    const sql = "INSERT INTO inscriçoes (nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações) VALUES (?, ?, ?)";
-    db.query(sql, [nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações], (err, result) => {
+    const sql = "INSERT INTO inscriçoes (nome_completo, email, telefone, morada, data_de_nascimento, cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    pool.query(sql, [nome_completo, email, telefone, morada, data_de_nascimento, cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes], (err, result) => {
         if (err) {
             return res.status(500).json({ error: err });
         }
         res.json({ message: "Inscrição realizada com sucesso!" });
     });
 });
-
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);

@@ -16,16 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputTelefone = document.querySelector("#telefone")
     const inputMorada = document.querySelector("#morada")
     const inputdata_de_nascimento = document.querySelector("#data_de_nascimento")
-    const inputcartão_de_cidadão = document.querySelector("#cartão_de_cidadão")
+    const inputcartao_de_cidadao = document.querySelector("#cartao_de_cidadao")
     const inputContribuinte = document.querySelector("#contribuinte")
     const inputAno = document.querySelector("#ano")
     const inputCurso = document.querySelector("#id_curso")
-    const inputHabilitações = document.querySelector("#habilitações")
+    const inputhabilitacoes = document.querySelector("#habilitacoes")
     const status = "pendente"
     const alert = document.querySelector(".alert")
 
-    function SendCand(nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações) {
-        console.log(nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações)
+    function SendCand(nome_completo, email, telefone, morada, data_de_nascimento, cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes) {
+        console.log(nome_completo, email, telefone, morada, data_de_nascimento, cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes)
 
         var date = new Date()
         var year = date.getFullYear()
@@ -44,11 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
             telefone: telefone,
             morada: morada,
             data_de_nascimento: data_de_nascimento,
-            cartão_de_cidadão: cartão_de_cidadão,
+            cartao_de_cidadao: cartao_de_cidadao,
             contribuinte: contribuinte,
             ano: ano,
             id_curso: id_curso,
-            habilitações: habilitações,
+            habilitacoes: habilitacoes,
             status: status,
             hora: FinalDate, 
         };
@@ -80,13 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const telefone = inputTelefone.value;
         const morada = inputMorada.value;
         const data_de_nascimento = inputdata_de_nascimento.value;
-        const cartão_de_cidadão = inputcartão_de_cidadão.value;
+        const cartao_de_cidadao = inputcartao_de_cidadao.value;
         const contribuinte = inputContribuinte.value;
         const ano = inputAno.value;
         const id_curso = inputCurso.value;
-        const habilitações = inputHabilitações.value;
+        const habilitacoes = inputhabilitacoes.value;
 
-        SendCand(nome_completo, email, telefone, morada, data_de_nascimento, cartão_de_cidadão, contribuinte, ano, id_curso, habilitações)
+        SendCand(nome_completo, email, telefone, morada, data_de_nascimento, cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes)
     });
 })
 
