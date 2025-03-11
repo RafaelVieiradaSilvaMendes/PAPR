@@ -1,0 +1,11 @@
+[
+  {
+    "nome_professor": "Bruno Freitas",
+    "nome_disciplina": "MatemáticaTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "4",
+    "id_curso": "2",
+    "id_professores": "3",
+    "ano": 12
+  }
+]

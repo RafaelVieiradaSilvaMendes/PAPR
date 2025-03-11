@@ -1,0 +1,20 @@
+[
+  {
+    "nome_professor": "Daniela Soares",
+    "nome_disciplina": "PortuguêsIG",
+    "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
+    "id_disciplina": "1",
+    "id_curso": "1",
+    "id_professores": "1",
+    "ano": 10
+  },
+  {
+    "nome_professor": "Daniela Soares",
+    "nome_disciplina": "PortuguêsTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "2",
+    "id_curso": "2",
+    "id_professores": "1",
+    "ano": 10
+  }
+]

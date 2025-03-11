@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="style.css" />
         <style>
             .thin-rectangle {
-                width: 1300px; /* Change to desired width */
+                width: 1350px; /* Change to desired width */
                 height: 5px; /* Change to desired height (thinness) */
-                background-color: #000000; /* Set your desired color */
+                background-color: #ffffff; /* Set your desired color */
                 margin: 20px auto; /* Centers the rectangle horizontally */
             }
         </style>
@@ -17,106 +17,117 @@
     <body>
         <h1>InfoTrack</h1>
         <div class="thin-rectangle"></div>
-            <h1>Curso Profissional Técnico de Informática de Gestão</h1>
+            <h1>Curso Profissional Técnico de Desporto</h1>
             <div class="info">
                 <div class="button-container">
-                    <a class="candbtn" href="index.html">Voltar</a> <a class="candbtn" href="11ano.html">---»</a>
+                    <a class="candbtn" href="index.html">Voltar</a> <a class="candbtn" href="11anoTD.html">---»</a>
                 </div>
                 <table>
                     <colgroup span="3"></colgroup>
                     <tr>
-                        <th>1111</th>
-                        <th>1111</th>
-                        <th>1111</th>
+                        <th>Disciplinas</th>
+                        <th>Módulos</th>
+                        <th>Cargas horárias</th>
+                        <th>Professores</th>
+                        
                     </tr>
                     <tr>
-                        <td>1111</td>
+                        <td>Português</td>
                         <td>
-                            1111
+                            Módulo 1
                             <br />
-                            1111
+                            Módulo 2
                             <br />
-                            1111
+                            Módulo 3
                             <br />
-                            1111
+                        </td>   
+                        <td>
+                            36 horas
                             <br />
-                            1111
+                            36 horas
+                            <br />
+                            35 horas
+                            <br />
                         </td>
                         <td>
-                            1111
+                            <p id="resultado">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Desporto"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Maria Silva"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
                             <br />
-                            1111
-                            <br />
-                            1111
-                            <br />
-                            1111
-                            <br />
-                            1111
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><br /></td>
-                    </tr>
-                    <tr>
-                        <td>1111</td>
-                        <td>
-                            1111
-                            <br />
-                            1111
-                        </td>
-                        <td>
-                            1111
-                            <br />
-                            1111
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><br /></td>
-                    </tr>
-                    <tr>
-                        <td>1111</td>
-                        <td>
-                            1111
-                            <br />
-                            1111
-                            <br />
-                            1111
-                            <br />
-                            1111
-                        </td>
-                        <td>
-                            1111
-                            <br />
-                            1111
-                            <br />
-                            1111
-                            <br />
-                            1111
+                            
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td><br /></td>
-                    </tr>
-                    <tr>
-                        <td>1111</td>
-                        <td>1111</td>
-                        <td>1111</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><br /></td>
-                    </tr>
-                    <tr>
-                        <td>1111</td>
-                        <td></td>
-                        <td>1111</td>
+                        <td>Matemática</td>
+                        <td>
+                            A2
+                            <br />
+                            A6
+                            <br />
+                            B1
+                        </td>   
+                        <td>
+                            36 horas
+                            <br />
+                            26 horas
+                            <br />
+                            36 horas
+                        </td>
+                        <td>
+                            <p id="resultado1">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Desporto"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Daniela Soares"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado1").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado1").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado1").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
                     </tr>
                 </table>
             </div>

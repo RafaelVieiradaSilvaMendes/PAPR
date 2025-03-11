@@ -2,8 +2,13 @@
   {
     "id_curso": 1,
     "nome": "Curso Profissional Técnico de Informática de Gestão",
-    "saídas profissionais": "fdgfh",
-    "carga horária": 15325,
-    "ano": 10
+    "saídas profissionais": "Instalação e Manutenção de computadores; Cybersegurança; Técnico de redes; Administração de utilizadores; Administrador de sistemas e de redes; Instalação e Manutenção de Redes; Gestão de servidores de rede.",
+    "carga horária": 3600
+  },
+  {
+    "id_curso": 2,
+    "nome": "Curso Profissional Técnico de Desporto",
+    "saídas profissionais": "Autarquias; Clubes desportivos; Associações desportivas; Empresas de aventura; Ginásios; Organização de eventos; Comércio e fabrico de material desportivo.",
+    "carga horária": 3300
   }
 ]

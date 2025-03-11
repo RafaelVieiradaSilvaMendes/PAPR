@@ -1,456 +1,115 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 @import url("https://fonts.cdnfonts.com/css/poppins");
 
 body, html {
-    text-align: center;
     height: 100%;
     width: 100%;
-    margin: auto;
-    background: linear-gradient(45deg, #1a242f, #22303c, #0f3a3e, #133f43);
-    background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite;
-    font-size: 24px
-  }
-  
-  /* Keyframes for the gradient animation */
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+    margin: 0;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
 
+/* Título principal */
 h1 {
-    margin: 5px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
 }
 
+/* Linha decorativa */
 .thin-rectangle {
-    width: 1500px; /* Change to desired width */
-    height: 5px; /* Change to desired height (thinness) */
-    background-color: #000000; /* Set your desired color */
-    margin: 20px auto; /* Centers the rectangle horizontally */
+    width: 40%;
+    height: 4px;
+    background-color: black;
+    margin: 25px auto;
 }
 
-.info {
+/* Formulário */
+.form-container {
+    width: 70%;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.info table {
-    border: 1px solid #000;
+/* Estilização dos inputs */
+.form-group {
     width: 100%;
-    align-items: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.info table tr td {
-    border: 1px solid #000;
-    background-color: #2dc2d6;
-    padding: 10px;
-    align-items: center;
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.info table th {
-    border: 1px solid #000;
-    background-color: #15ab92;
-    padding: 10px;
-    align-items: center;
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 22px;
+}
+
+/* Botões */
+.button-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.candbtn, .Enviarbtn, .Voltarbtn {
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    border: none;
+    margin: 10px;
 }
 
 .candbtn {
-    width: 50%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-    background-color: rgb(64, 202, 226);
-    border-radius: 10px;
-    border: 1px solid #000;
-    text-decoration: none;
-    color: black;
-    transition: ease-in-out 0.3s;
+    background: #15ab92;
+    color: white;
 }
 
 .candbtn:hover {
-    background-color: #d6442d;
-    color: black;
-    transition: ease-in-out 0.3s;
-    align-items: center;
+    background: #12806d;
 }
 
 .Enviarbtn {
-    width: 50%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-    background-color: rgb(0, 255, 0);
-    border-radius: 10px;
-    border: 1px solid #000;
-    text-decoration: none;
-    color: black;
-    transition: ease-in-out 0.3s;
+    background: #28a745;
+    color: white;
 }
 
 .Enviarbtn:hover {
-    background-color: rgb(68, 214, 45);
-    color: black;
-    transition: ease-in-out 0.3s;
-    align-items: center;
+    background: #1d7d34;
 }
 
 .Voltarbtn {
-    width: 50%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-    background-color: rgb(255, 0, 0);
-    border-radius: 10px;
-    border: 1px solid #000;
-    text-decoration: none;
-    color: black;
-    transition: ease-in-out 0.3s;
+    background: #dc3545;
+    color: white;
 }
 
 .Voltarbtn:hover {
-    background-color: rgb(214, 68, 45);
-    color: black;
-    transition: ease-in-out 0.3s;
-    align-items: center;
+    background: #b71d2d;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-right: 20px;
-    padding: 20px;
-    transition: ease-in-out 0.3s;
-}
-
-.buttons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #15ab92;
-    border-radius: 10px;
-    border: 1px solid #000;
-    text-decoration: none;
-    color: black;
-    transition: ease-in-out 0.3s;
-}
-
-.buttons a:hover {
-    background-color: #d6442d;
-    color: black;
-    transition: ease-in-out 0.3s;
-}
-
-td:last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.form-popup {
-    width: 60%;
-    display: none;
-    position: fixed;
-    border: 3px solid #f1f1f1;
-    bottom: 50px;
-}
-
-.container-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Add styles to the form container */
-.form-container {
-    width: 60%;
-    padding: 10px;
-    background-color: #ffffff00;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.formpop-container {
-    width: 50%;
-    padding: 10px;
-    background-color: #ffffffbb;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 80%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #ffffff;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    outline: none;
-}
-
-#container {
-    display: hidden;
-    font-family: 'Lato' sans-serif;
-    position: fixed;
-    overflow: hidden;
-    width: 400px;
-    height: 250px;
-    right: 0;
-    transition: ease-in-out 0.4s;
-}
-
-#container h1 {
-    font-size: 0.9em;
-    font-weight: 100;
-    letter-spacing: 3px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-}
-
-#container p {
-    margin-top: -5px;
-    font-size: 0.5em;
-    font-weight: 100;
-    letter-spacing: 1px;
-}
-
-.green {
-    color: #99DBB4;
-}
-
-.red {
-    color: #EF8D9C;
-}
-
-.alert {
-    font-weight: 700;
-    letter-spacing: 5px;
-}
-
-button, .dot {
-    cursor: pointer;
-}
-
-#success-box {
-    display:none;
-    position: fixed;
-    width: 250px;
-    height: 250px;
-    right: 2%;
-    bottom: 5%;
-    background: linear-gradient(to bottom right, #B0DB7D 40%, #99DBB4 100%);
-    border-radius: 20px;
-    box-shadow: 5px 5px 20px rgba(#CBCDD3, 10%);
-    perspective: 40px;
-    transition: ease-in-out 0.4s;
-}
-
-#error-box {
-    display: none;
-    display: hidden;
-    position: absolute;
-    width: 35%;
-    height: 96%;
-    right: 2%;
-    bottom: 5%;
-    background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
-    border-radius: 20px;
-    box-shadow: 5px 5px 20px rgba(#CBCDD3, 10%);
-    transition: ease-in-out 0.4s;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: #FCFCFC;
-    border-radius: 50%;
-    position: absolute;
-    top: 4%;
-    right: 6%;
-    }
-    
-
-.two {
-    right: 12%;
-    opacity: .5;
-}
-
-.face {
-    position: absolute;
-    width: 22%;
-    height: 22%;
-    background: #FCFCFC;
-    border-radius: 50%;
-    border: 1px solid #777777;
-    top: 21%;
-    left: 37.5%;
-    z-index: 2;
-    animation: bounce 1s ease-in infinite;
-}
-
-.face2 {
-    position: absolute;
-    width: 22%;
-    height: 22%;
-    background: #FCFCFC;
-    border-radius: 50%;
-    border: 1px solid #777777;
-    top: 21%;
-    left: 37.5%;
-    z-index: 2;
-    animation: roll 3s ease-in-out infinite;
-}
-
-.eye {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #777777;
-    border-radius: 50%;
-    top: 40%;
-    left: 20%;
-}
-
-.right {
-    left: 68%;
-}
-
-.mouth {
-    position:absolute;
-    top: 43%;
-    left: 41%;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-}
-
-.happy {
-    border: 2px solid;
-    border-color: transparent #777777 #777777 transparent;
-    transform: rotate(45deg);
-}
-
-.sad {
-    top: 49%;
-    border: 2px solid;
-    border-color: #777777 transparent transparent #777777;
-    transform: rotate(45deg);
-}
-
-.shadow {
-    position: absolute;
-    width: 21%;
-    height: 3%;
-    opacity: .5;
-    background: #777777;
-    left: 40%;
-    top: 43%;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.scale {
-    animation: scale 1s ease-in infinite;
-}
-.move {
-    animation: move 3s ease-in-out infinite;
-}
-
-
-.message {
-    font-family: 'Lato', sans-serif;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    height: 40%;
-    top: 47%;
-}
-
-.button-box {
-    position: absolute;
-    background: #FCFCFC;
-    width: 50%;
-    height: 15%;
-    border-radius: 20px;
-    top: 73%;
-    left: 25%;
-    outline: 0;
-    border: none;
-    box-shadow: 2px 2px 10px rgba(#777777, .5);
-    transition: all .5s ease-in-out;
-    background: #FCFCFC;
-    transform: scale(1.05);
-    transition: all .3s ease-in-out;
-    }
-
-
-@keyframes bounce {
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes scale {
-    50% {
-        transform: scale(0.9);
-    }
-}
-
-@keyframes roll {
-    0% {
-        transform: rotate(0deg);
-        left: 25%;
-    }
-    50% {
-        left: 60%;
-        transform: rotate(168deg);
-    }
-    100% {
-        transform: rotate(0deg);
-        left: 25%;
-    }
-}
-
-@keyframes move {
-    0% {
-        left: 25%;
-    }
-    50% {
-        left: 60%;
-    }
-    100% {
-        left: 25%;
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
     }
 }

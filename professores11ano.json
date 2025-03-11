@@ -1,0 +1,11 @@
+[
+  {
+    "nome_professor": "Susana Soberano",
+    "nome_disciplina": "MatemáticaIG",
+    "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
+    "id_disciplina": "3",
+    "id_curso": "1",
+    "id_professores": "2",
+    "ano": 11
+  }
+]
