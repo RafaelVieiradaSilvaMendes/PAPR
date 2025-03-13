@@ -19,7 +19,7 @@
         <div class="thin-rectangle"></div>
             <h1>Curso Profissional Técnico de Informática de Gestão</h1>
             <div class="button-container">
-                <a class="candbtn" href="11anoTD.html">«---</a> <a class="candbtn" href="index.html">Voltar</a>
+                 <a class="candbtn" href="index.html">Voltar</a><a class="candbtn" href="11anoIG.html">---»</a>
             </div>
             <div class="info">
                 
@@ -35,11 +35,11 @@
                     <tr>
                         <td>Português</td>
                         <td>
-                            Módulo 1
+                            Módulo1
                             <br />
-                            Módulo 2
+                            Módulo2
                             <br />
-                            Módulo 3
+                            Módulo3
                             <br />
                         </td>   
                         <td>
@@ -109,7 +109,7 @@
                             <script>
                                 document.addEventListener("DOMContentLoaded", function () {
                                     const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
-                                    const professoraBuscada = "Antonio Castro"; // 🔹 Defina o nome da professora desejada
+                                    const professoraBuscada = "Susana Soberano"; // 🔹 Defina o nome da professora desejada
                         
                                     fetch("professores10ano.json")
                                         .then(response => response.json())
@@ -127,6 +127,480 @@
                                         })
                                         .catch(error => {
                                             document.getElementById("resultado1").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Linguagens de Programação</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo2
+                            <br />
+                            Módulo3
+                            <br />
+                            Módulo4
+                            <br />
+                            Módulo5
+                            <br />
+                            Módulo6
+                            <br />
+                            Módulo7
+                            <br />
+                            Módulo8
+                            <br />
+                            Módulo9
+                        </td>   
+                        <td>
+                            24 horas
+                            <br />
+                            20 horas
+                            <br />
+                            36 horas
+                            <br />
+                            36 horas
+                            <br />
+                            21 horas
+                            <br />
+                            18 horas
+                            <br />
+                            27 horas
+                            <br />
+                            18 horas
+                            <br />
+                            27 horas
+                        </td>
+                        <td>
+                            <p id="resultado2">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Maria Conceição Meneses"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado2").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado2").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado2").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Inglês</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo2
+                            <br />
+                            Módulo3
+                            <br />
+                        </td>   
+                        <td>
+                            28 horas
+                            <br />
+                            24 horas
+                            <br />
+                            24 horas
+                        </td>
+                        <td>
+                            <p id="resultado3">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Maria Antonieta Soares"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado3").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado3").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado3").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Educação Fisica</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo4
+                            <br />
+                            Módulo7
+                            <br />
+                            Módulo10
+                            <br />
+                            Módulo14
+                            <br />
+                            Módulo13
+                        </td>   
+                        <td>
+                            11 horas
+                            <br />
+                            10 horas
+                            <br />
+                            10 horas
+                            <br />
+                            10 horas
+                            <br />
+                            9 horas
+                            <br />
+                            3 horas
+                        </td>
+                        <td>
+                            <p id="resultado4">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Salomé Castro"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado4").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado4").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado4").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Área de Integração</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo2
+                        </td>   
+                        <td>
+                            38 horas
+                            <br />
+                            38 horas
+                        </td>
+                        <td>
+                            <p id="resultado5">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Maria Conceição Leite"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado5").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado5").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado5").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Técnologias de Informação e Comunicação</td>
+                        <td>
+                            Módulo2
+                            <br />
+                            Módulo1
+                            <br />
+                            Módulo3
+                            <br />
+                            Módulo5
+                        </td>   
+                        <td>
+                            25 horas
+                            <br />
+                            25 horas
+                            <br/>
+                            25 horas
+                            <br />
+                            25 horas
+                        </td>
+                        <td>
+                            <p id="resultado6">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Teresa Oliveira"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado6").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado6").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado6").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ecónomia</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo2
+                            <br />
+                            Módulo3
+                        </td>   
+                        <td>
+                            20 horas
+                            <br />
+                            33 horas
+                            <br />
+                            24 horas
+                        </td>
+                        <td>
+                            <p id="resultado7">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Emília Pinheiro"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado7").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado7").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado7").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Organização de Empresas e Aplicações de Gestão</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo2
+                            <br />
+                            Módulo3
+                            <br />
+                            Módulo4
+                            <br />
+                            Módulo5
+                        </td>   
+                        <td>
+                            12 horas
+                            <br />
+                            25 horas
+                            <br />
+                            25 horas
+                            <br />
+                            25 horas
+                            <br />
+                            25 horas
+
+                        </td>
+                        <td>
+                            <p id="resultado8">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Emília Pinheiro"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado8").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado8").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado8").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sistemas de Informação</td>
+                        <td>
+                            Módulo1
+                            <br />
+                            Módulo2
+                            <br />
+                            Módulo3
+                        </td>   
+                        <td>
+                            21 horas
+                            <br />
+                            36 horas
+                            <br />
+                            36 horas
+                        </td>
+                        <td>
+                            <p id="resultado9">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Maria Conceição Meneses"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado9").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado9").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado9").innerHTML = "Erro ao carregar os dados.";
+                                            console.error("Erro ao carregar o JSON:", error);
+                                        });
+                                });
+                            </script>
+                            <br />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Aplicações Informáticas e Sistemas de Informação</td>
+                        <td>
+                            Módulo4
+                            <br />
+                            Módulo5
+                        </td>   
+                        <td>
+                            36 horas
+                            <br />
+                            37 horas
+                        </td>
+                        <td>
+                            <p id="resultado10">Carregando...</p>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const cursoBuscado = "Curso Profissional Técnico de Informática de Gestão"; // 🔹 Defina o curso desejado
+                                    const professoraBuscada = "Beatriz Pires"; // 🔹 Defina o nome da professora desejada
+                        
+                                    fetch("professores10ano.json")
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Filtrar a professora pelo nome e pelo curso
+                                            const professoraEncontrada = data.find(prof => 
+                                                prof.nome_curso === cursoBuscado && prof.nome_professor === professoraBuscada
+                                            );
+                        
+                                            if (professoraEncontrada) {
+                                                document.getElementById("resultado10").innerHTML = `<strong>${professoraEncontrada.nome_professor}</strong>`;
+                                            } else {
+                                                document.getElementById("resultado10").innerHTML = "Professora não encontrada para este curso.";
+                                            }
+                                        })
+                                        .catch(error => {
+                                            document.getElementById("resultado10").innerHTML = "Erro ao carregar os dados.";
                                             console.error("Erro ao carregar o JSON:", error);
                                         });
                                 });
