@@ -1,11 +1,11 @@
 [
   {
-    "nome_professor": "Maria Conceição Leite",
+    "nome_professor": "Inês Teixeira",
     "nome_disciplina": "Área de IntegraçãoIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "7",
     "id_curso": "1",
-    "id_professores": "6",
+    "id_professores": "14",
     "ano": 10
   },
   {
@@ -18,21 +18,21 @@
     "ano": 10
   },
   {
-    "nome_professor": "Maria Antonieta Soares",
+    "nome_professor": "Ana Felgueiras",
     "nome_disciplina": "InglêsIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "4",
     "id_curso": "1",
-    "id_professores": "4",
+    "id_professores": "16",
     "ano": 10
   },
   {
-    "nome_professor": "Daniela Soares",
+    "nome_professor": "Cláudia Sofia",
     "nome_disciplina": "PortuguêsIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "1",
     "id_curso": "1",
-    "id_professores": "1",
+    "id_professores": "15",
     "ano": 10
   },
   {
@@ -45,12 +45,12 @@
     "ano": 10
   },
   {
-    "nome_professor": "Salomé Castro",
+    "nome_professor": "Luís Ramalho",
     "nome_disciplina": "Educação FísicaIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "20",
     "id_curso": "1",
-    "id_professores": "5",
+    "id_professores": "13",
     "ano": 10
   },
   {
@@ -63,21 +63,21 @@
     "ano": 10
   },
   {
-    "nome_professor": "Emília Pinheiro",
+    "nome_professor": "Bruno Moreira",
     "nome_disciplina": "EconomiaIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "17",
     "id_curso": "1",
-    "id_professores": "8",
+    "id_professores": "12",
     "ano": 10
   },
   {
-    "nome_professor": "Emília Pinheiro",
+    "nome_professor": "Cristina Gouveia",
     "nome_disciplina": "Organização de Empresas e Aplicações de GestãoIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "11",
     "id_curso": "1",
-    "id_professores": "8",
+    "id_professores": "10",
     "ano": 10
   },
   {
@@ -90,12 +90,12 @@
     "ano": 10
   },
   {
-    "nome_professor": "Maria Conceição Meneses",
+    "nome_professor": "Beatriz Pires",
     "nome_disciplina": "Sistemas de InformaçãoIG",
     "nome_curso": "Curso Profissional Técnico de Informática de Gestão",
     "id_disciplina": "26",
     "id_curso": "1",
-    "id_professores": "3",
+    "id_professores": "7",
     "ano": 10
   }
 ]
