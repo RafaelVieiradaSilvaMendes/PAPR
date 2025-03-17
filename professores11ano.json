@@ -97,5 +97,104 @@
     "id_curso": "1",
     "id_professores": "9",
     "ano": 11
+  },
+  {
+    "nome_professor": "Inês Teixeira",
+    "nome_disciplina": "Área de IntegraçãoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "41",
+    "id_curso": "2",
+    "id_professores": "14",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Carlos Barroso",
+    "nome_disciplina": "Atividades de Animação e LazerTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "64",
+    "id_curso": "2",
+    "id_professores": "20",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Luís Ramalho",
+    "nome_disciplina": "Desportos ColetivosTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "58",
+    "id_curso": "2",
+    "id_professores": "13",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Júlia Santos",
+    "nome_disciplina": "Desportos IndividuaisTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "61",
+    "id_curso": "2",
+    "id_professores": "21",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Luís Ramalho",
+    "nome_disciplina": "Educação FísicaTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "45",
+    "id_curso": "2",
+    "id_professores": "13",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Luís Ramalho",
+    "nome_disciplina": "Estudo do MovimentoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "52",
+    "id_curso": "2",
+    "id_professores": "13",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Ana Neves",
+    "nome_disciplina": "InglêsTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "38",
+    "id_curso": "2",
+    "id_professores": "18",
+    "ano": 11
+  },
+  {
+    "nome_professor": "José Silva",
+    "nome_disciplina": "MatemáticaTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "48",
+    "id_curso": "2",
+    "id_professores": "23",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Cláudia Sofia",
+    "nome_disciplina": "PortuguêsTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "35",
+    "id_curso": "2",
+    "id_professores": "15",
+    "ano": 11
+  },
+  {
+    "nome_professor": "José Silva",
+    "nome_disciplina": "Formação em Contexto de TrabalhoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "66",
+    "id_curso": "2",
+    "id_professores": "23",
+    "ano": 11
+  },
+  {
+    "nome_professor": "Maria Castro",
+    "nome_disciplina": "Introdução ao DesportoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "55",
+    "id_curso": "2",
+    "id_professores": "24",
+    "ano": 11
   }
 ]

@@ -43,12 +43,22 @@
 
                     <label for="nome"><b>Nome</b></label>
                     <input id="nome_completo" type="text" placeholder="Nome (Aluno)" name="nome" required>
+                    <script>
+                        document.getElementById('nome_completo').addEventListener('input', function (e) {
+                            this.value = this.value.replace(/[0-9]/g, ''); // Remove números imediatamente
+                        });
+                        </script>
 
                     <label for="email">Email</label>
                     <input id="email" type="text" placeholder="Email (Aluno)" name="nome" required>
 
                     <label for="telefone">Telefone</label>
                     <input id="telefone" type="text" placeholder="telefone (Aluno)" name="telefone" required>
+                    <script>
+                        document.getElementById('telefone').addEventListener('input', function (e) {
+                            this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
+                        });
+                        </script>
 
                     <label for="morada">Morada</label>
                     <input id="morada" type="text" placeholder="Morada" name="morada" required>
@@ -65,6 +75,9 @@
                             this.value = this.value.slice(0, 8);
                           }
                         });
+                        document.getElementById('cartao_de_cidadao').addEventListener('input', function (e) {
+                            this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
+                        });
                       </script>
 
                     <label for="contribuinte">Contribuinte</label>
@@ -75,10 +88,18 @@
                             this.value = this.value.slice(0, 9);
                           }
                         });
+                        document.getElementById('contribuinte').addEventListener('input', function (e) {
+                            this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
+                        });
                       </script>
 
                     <label for="ano">Ano</label>
                     <input id="ano" type="text" placeholder="Ano" name="ano" required>
+                    <script>
+                        document.getElementById('ano').addEventListener('input', function (e) {
+                            this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
+                        });
+                        </script>
                     
                     <label for="id_curso">Cursos:</label>
                     <select id="id_curso" name="curso" required>
@@ -106,6 +127,11 @@
 
                     <label for="habilitacoes">habilitações</label>
                     <input id="habilitacoes" type="text" placeholder="habilitacoes" name="habilitacoes" required>
+                    <script>
+                        document.getElementById('habilitacoes').addEventListener('input', function (e) {
+                            this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
+                        });
+                        </script>
                 
         </div>
                 </div>
@@ -114,63 +140,65 @@
                         <button class="candbtn" type="submit">Enviar Candidatura</button>
                     </div>
                     </div>
-                </form>
-                
-                <p id="mensagem"></p>
-                
-                <script>
-                    document.getElementById("formInscricao").addEventListener("submit", function(event) {
-                        event.preventDefault(); // Evita recarregar a página
-                
-                        // Capturar os dados do formulário
-                        const nome_completo = document.getElementById("nome_completo").value.trim();
-                        const email = document.getElementById("email").value.trim();
-                        const telefone = document.getElementById("telefone").value.trim();
-                        const morada = document.getElementById("morada").value.trim();
-                        const data_de_nascimento = document.getElementById("data_de_nascimento").value.trim();
-                        const cartao_de_cidadao = document.getElementById("cartao_de_cidadao").value.trim();
-                        const contribuinte = document.getElementById("contribuinte").value.trim();
-                        const ano = document.getElementById("ano").value.trim();
-                        const id_curso = document.getElementById("id_curso").value.trim();
-                        const habilitacoes = document.getElementById("habilitacoes").value.trim();
-                
-                        // Verifica se todos os campos estão preenchidos
-                        if (!nome_completo || !email || !telefone || !morada || !data_de_nascimento || 
-                            !cartao_de_cidadao || !contribuinte || !ano || !id_curso || !habilitacoes) {
-                            document.getElementById("mensagem").innerText = "Preencha todos os campos!";
-                            return;
-                        }
-                
-                         // Debug para ver os dados no console
-
-                         console.log(cartao_de_cidadao)
-                
-                        // Enviar os dados para o servidor
-                        fetch("http://localhost:3000/inscrever", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                                "Accept": "application/json"
-                            },
-                            body: JSON.stringify({
-                                nome_completo, email, telefone, morada, data_de_nascimento, 
-                                cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes
-                            })
-                        })
-                        .then(response => response.json())  // Verifica se a resposta está em JSON
-                        .then(data => {
-                            console.log("Resposta do servidor:", data);
-                            document.getElementById("mensagem").innerText = data.message; // Exibe a resposta
-                            document.getElementById("formInscricao").reset(); // Limpa o formulário
-                        })
-                        .catch(error => {
-                            console.error("Erro ao enviar:", error);
-                            document.getElementById("mensagem").innerText = "Erro ao enviar inscrição!";
-                        });
-                    });
-                </script>
                 <div class="container-center">
-                   <a class="candbtn" href="index.html">Voltar</a>
+                    </form>
+                    
+                    <p id="mensagem"></p>
+                    
+                    <script>
+                        document.getElementById("formInscricao").addEventListener("submit", function(event) {
+                            event.preventDefault(); // Evita recarregar a página
+                    
+                            // Capturar os dados do formulário
+                            const nome_completo = document.getElementById("nome_completo").value.trim();
+                            const email = document.getElementById("email").value.trim();
+                            const telefone = document.getElementById("telefone").value.trim();
+                            const morada = document.getElementById("morada").value.trim();
+                            const data_de_nascimento = document.getElementById("data_de_nascimento").value.trim();
+                            const cartao_de_cidadao = document.getElementById("cartao_de_cidadao").value.trim();
+                            const contribuinte = document.getElementById("contribuinte").value.trim();
+                            const ano = document.getElementById("ano").value.trim();
+                            const id_curso = document.getElementById("id_curso").value.trim();
+                            const habilitacoes = document.getElementById("habilitacoes").value.trim();
+                    
+                            // Verifica se todos os campos estão preenchidos
+                            if (!nome_completo || !email || !telefone || !morada || !data_de_nascimento || 
+                                !cartao_de_cidadao || !contribuinte || !ano || !id_curso || !habilitacoes) {
+                                document.getElementById("mensagem").innerText = "Preencha todos os campos!";
+                                return;
+                            }
+                    
+                            // Debug para ver os dados no console
+
+                            console.log(cartao_de_cidadao)
+                    
+                            // Enviar os dados para o servidor
+                            fetch("http://localhost:3000/inscrever", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    nome_completo, email, telefone, morada, data_de_nascimento, 
+                                    cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes
+                                })
+                            })
+                            .then(response => response.json())  // Verifica se a resposta está em JSON
+                            .then(data => {
+                                console.log("Resposta do servidor:", data);
+                                document.getElementById("mensagem").innerText = data.message; // Exibe a resposta
+                                document.getElementById("formInscricao").reset(); // Limpa o formulário
+                            })
+                            .catch(error => {
+                                console.error("Erro ao enviar:", error);
+                                document.getElementById("mensagem").innerText = "Erro ao enviar inscrição!";
+                            });
+                        });
+                    </script>
+                    </div>
+                <div class="container-center">
+                   <a class="candbtn" href="InfoTrack.html">Voltar</a>
                  </div>
             </div>
         </div>

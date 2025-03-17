@@ -97,5 +97,104 @@
     "id_curso": "1",
     "id_professores": "3",
     "ano": 12
+  },
+  {
+    "nome_professor": "Maria Conceição Leite",
+    "nome_disciplina": "Área de IntegraçãoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "42",
+    "id_curso": "2",
+    "id_professores": "6",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Gonçalo Barros",
+    "nome_disciplina": "Atividades de Animação e LazerTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "65",
+    "id_curso": "2",
+    "id_professores": "22",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Martim Machado",
+    "nome_disciplina": "Desportos ColetivosTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "59",
+    "id_curso": "2",
+    "id_professores": "25",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Salomé Castro",
+    "nome_disciplina": "Desportos IndividuaisTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "62",
+    "id_curso": "2",
+    "id_professores": "5",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Salomé Castro",
+    "nome_disciplina": "Educação FísicaTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "46",
+    "id_curso": "2",
+    "id_professores": "5",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Maria Castro",
+    "nome_disciplina": "Estudo do MovimentoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "53",
+    "id_curso": "2",
+    "id_professores": "24",
+    "ano": 12
+  },
+  {
+    "nome_professor": "José Silva",
+    "nome_disciplina": "MatemáticaTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "49",
+    "id_curso": "2",
+    "id_professores": "23",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Daniela Soares",
+    "nome_disciplina": "PortuguêsTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "36",
+    "id_curso": "2",
+    "id_professores": "1",
+    "ano": 12
+  },
+  {
+    "nome_professor": "José Silva",
+    "nome_disciplina": "Formação em Contexto de TrabalhoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "67",
+    "id_curso": "2",
+    "id_professores": "23",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Maria Castro",
+    "nome_disciplina": "Introdução ao DesportoTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "56",
+    "id_curso": "2",
+    "id_professores": "24",
+    "ano": 12
+  },
+  {
+    "nome_professor": "Maria Antonieta Soares",
+    "nome_disciplina": "InglêsTD",
+    "nome_curso": "Curso Profissional Técnico de Desporto",
+    "id_disciplina": "39",
+    "id_curso": "2",
+    "id_professores": "4",
+    "ano": 12
   }
 ]
