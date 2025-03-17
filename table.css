@@ -64,11 +64,16 @@ h1 {
 
 .form-group input, 
 .form-group select {
-    width: 100%;
-    padding: 18px;
+    width: 40%;
+    padding: 10px;
     border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 22px;
+    border-radius: 1000px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
 }
 
 /* Botões */
@@ -120,4 +125,40 @@ h1 {
     .form-container {
         width: 90%;
     }
+}
+
+.popup {
+    display: none; /* Começa oculto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    color:rgb(0, 0, 0)
+}
+
+.popup button {
+    background: #007bff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+.popup button:hover {
+    background: #0056b3;
 }

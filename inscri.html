@@ -38,36 +38,41 @@
             
             <div class="container-center">
             
-                <form class="form-container" id="formInscricao">
+                <form class="form-group" id="formInscricao">
                     <h1>Candidatura</h1>
 
-                    <label for="nome"><b>Nome</b></label>
-                    <input id="nome_completo" type="text" placeholder="Nome (Aluno)" name="nome" required>
+                    <label class="container-center" for="nome"><b>Nome</b></label>
+                    <input  id="nome_completo" type="text" placeholder="Nome (Aluno)" name="nome" required>
                     <script>
                         document.getElementById('nome_completo').addEventListener('input', function (e) {
                             this.value = this.value.replace(/[0-9]/g, ''); // Remove números imediatamente
                         });
                         </script>
 
-                    <label for="email">Email</label>
+                    <label class="container-center" for="email">Email</label>
                     <input id="email" type="text" placeholder="Email (Aluno)" name="nome" required>
 
-                    <label for="telefone">Telefone</label>
+                    <label class="container-center" for="telefone">Telefone</label>
                     <input id="telefone" type="text" placeholder="telefone (Aluno)" name="telefone" required>
                     <script>
+                        document.getElementById("cartao_de_cidadao").addEventListener("input", function () {
+                          if (this.value.length > 9) {
+                            this.value = this.value.slice(0, 9);
+                          }
+                        });
                         document.getElementById('telefone').addEventListener('input', function (e) {
                             this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
                         });
                         </script>
 
-                    <label for="morada">Morada</label>
+                    <label class="container-center" for="morada">Morada</label>
                     <input id="morada" type="text" placeholder="Morada" name="morada" required>
 
-                    <label for="data_de_nascimento">Data de nascimento</label>
+                    <label class="container-center" for="data_de_nascimento">Data de nascimento</label>
                     <form action="/submit-date" method="post">
                     <input type="date" id="data_de_nascimento" name="dob">
 
-                    <label for="cartao_de_cidadao">Cartão de cidadão</label>
+                    <label class="container-center" for="cartao_de_cidadao">Cartão de cidadão</label>
                     <input id="cartao_de_cidadao" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
                     <script>
                         document.getElementById("cartao_de_cidadao").addEventListener("input", function () {
@@ -80,7 +85,7 @@
                         });
                       </script>
 
-                    <label for="contribuinte">Contribuinte</label>
+                    <label class="container-center" for="contribuinte">Contribuinte</label>
                     <input id="contribuinte" type="text" placeholder="Contrinuinte (Aluno)" name="contribuinte" required>
                     <script>
                         document.getElementById("contribuinte").addEventListener("input", function () {
@@ -93,7 +98,7 @@
                         });
                       </script>
 
-                    <label for="ano">Ano</label>
+                    <label class="container-center" for="ano">Ano</label>
                     <input id="ano" type="text" placeholder="Ano" name="ano" required>
                     <script>
                         document.getElementById('ano').addEventListener('input', function (e) {
@@ -101,7 +106,7 @@
                         });
                         </script>
                     
-                    <label for="id_curso">Cursos:</label>
+                    <label class="container-center" for="id_curso">Cursos:</label>
                     <select id="id_curso" name="curso" required>
                         <option value="">-- Selecionar curso --</option>
                     </select>
@@ -125,8 +130,8 @@
                             
                     </script>
 
-                    <label for="habilitacoes">habilitações</label>
-                    <input id="habilitacoes" type="text" placeholder="habilitacoes" name="habilitacoes" required>
+                    <label class="container-center" for="habilitacoes">habilitações</label>
+                    <input  id="habilitacoes" type="text" placeholder="habilitacoes" name="habilitacoes" required>
                     <script>
                         document.getElementById('habilitacoes').addEventListener('input', function (e) {
                             this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
@@ -134,72 +139,102 @@
                         </script>
                 
         </div>
+            
                 </div>
                     <div class="container-center">
                     <div class="info">
                         <button class="candbtn" type="submit">Enviar Candidatura</button>
+                                                <!-- Pop-up (Coloca dentro do <body>) -->
+                        <div id="popup" class="popup">
+                            <div class="popup-content">
+                                <span id="popup-icon">✔️</span> <!-- Ícone de sucesso/erro -->
+                                <p id="popup-message"></p>
+                                <script>
+                                    window.onload = function () {
+                                        fecharPopup(); // Garante que o pop-up começa fechado
+                                        carregarCursos(); // Continua a carregar os cursos normalmente
+                                    };
+                                </script>
+                            </div>
+                        </div>
                     </div>
                     </div>
-                <div class="container-center">
-                    </form>
-                    
-                    <p id="mensagem"></p>
-                    
-                    <script>
-                        document.getElementById("formInscricao").addEventListener("submit", function(event) {
-                            event.preventDefault(); // Evita recarregar a página
-                    
-                            // Capturar os dados do formulário
-                            const nome_completo = document.getElementById("nome_completo").value.trim();
-                            const email = document.getElementById("email").value.trim();
-                            const telefone = document.getElementById("telefone").value.trim();
-                            const morada = document.getElementById("morada").value.trim();
-                            const data_de_nascimento = document.getElementById("data_de_nascimento").value.trim();
-                            const cartao_de_cidadao = document.getElementById("cartao_de_cidadao").value.trim();
-                            const contribuinte = document.getElementById("contribuinte").value.trim();
-                            const ano = document.getElementById("ano").value.trim();
-                            const id_curso = document.getElementById("id_curso").value.trim();
-                            const habilitacoes = document.getElementById("habilitacoes").value.trim();
-                    
-                            // Verifica se todos os campos estão preenchidos
-                            if (!nome_completo || !email || !telefone || !morada || !data_de_nascimento || 
-                                !cartao_de_cidadao || !contribuinte || !ano || !id_curso || !habilitacoes) {
-                                document.getElementById("mensagem").innerText = "Preencha todos os campos!";
-                                return;
-                            }
-                    
-                            // Debug para ver os dados no console
+                </form>
+                        <script>
+                            // Função para exibir o pop-up corretamente
+                            function mostrarPopup(mensagem, sucesso = true) {
+                                const popup = document.getElementById("popup");
+                                const popupMessage = document.getElementById("popup-message");
+                                const popupIcon = document.getElementById("popup-icon");
 
-                            console.log(cartao_de_cidadao)
-                    
-                            // Enviar os dados para o servidor
-                            fetch("http://localhost:3000/inscrever", {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "Accept": "application/json"
-                                },
-                                body: JSON.stringify({
-                                    nome_completo, email, telefone, morada, data_de_nascimento, 
-                                    cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes
+                                popupMessage.innerText = mensagem;
+                                popupIcon.innerHTML = sucesso ? "" : ""; // Ícones diferentes para erro ou sucesso
+                                popupIcon.style.color = sucesso ? "#4caf50" : "#e74c3c"; // Verde para sucesso, vermelho para erro
+
+                                popup.style.display = "flex"; // Agora aparece apenas quando chamado
+
+                                setTimeout(() => {
+                                    popup.style.display = "none"; // Esconde após 3 segundos
+                                }, 3000);
+                            }
+
+                            // Função para fechar o pop-up manualmente
+                            function fecharPopup() {
+                                document.getElementById("popup").style.display = "none";
+                            }
+
+                            // Captura o formulário e adiciona o evento de submit
+                            document.getElementById("formInscricao").addEventListener("submit", function (event) {
+                                event.preventDefault(); // Evita o recarregamento da página
+
+                                // Capturar os dados do formulário
+                                const nome_completo = document.getElementById("nome_completo").value.trim();
+                                const email = document.getElementById("email").value.trim();
+                                const telefone = document.getElementById("telefone").value.trim();
+                                const morada = document.getElementById("morada").value.trim();
+                                const data_de_nascimento = document.getElementById("data_de_nascimento").value.trim();
+                                const cartao_de_cidadao = document.getElementById("cartao_de_cidadao").value.trim();
+                                const contribuinte = document.getElementById("contribuinte").value.trim();
+                                const ano = document.getElementById("ano").value.trim();
+                                const id_curso = document.getElementById("id_curso").value.trim();
+                                const habilitacoes = document.getElementById("habilitacoes").value.trim();
+
+                                // Verifica se todos os campos estão preenchidos
+                                if (!nome_completo || !email || !telefone || !morada || !data_de_nascimento ||
+                                    !cartao_de_cidadao || !contribuinte || !ano || !id_curso || !habilitacoes) {
+                                    mostrarPopup("Preencha todos os campos!", false);
+                                    return;
+                                }
+
+                                // Enviar os dados para o servidor
+                                fetch("http://localhost:3000/inscrever", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Accept": "application/json"
+                                    },
+                                    body: JSON.stringify({
+                                        nome_completo, email, telefone, morada, data_de_nascimento,
+                                        cartao_de_cidadao, contribuinte, ano, id_curso, habilitacoes
+                                    })
                                 })
-                            })
-                            .then(response => response.json())  // Verifica se a resposta está em JSON
-                            .then(data => {
-                                console.log("Resposta do servidor:", data);
-                                document.getElementById("mensagem").innerText = data.message; // Exibe a resposta
-                                document.getElementById("formInscricao").reset(); // Limpa o formulário
-                            })
-                            .catch(error => {
-                                console.error("Erro ao enviar:", error);
-                                document.getElementById("mensagem").innerText = "Erro ao enviar inscrição!";
+                                .then(response => response.json())
+                                .then(data => {
+                                    mostrarPopup("✅ Inscrição enviada com Sucesso " + data.message, true); // Exibe a resposta no pop-up
+                                    document.getElementById("formInscricao").reset();
+                                })
+                                .catch(error => {
+                                    console.error(error);
+                                    mostrarPopup("❌ Erro ao enviar inscrição!", false);
+                                });
                             });
-                        });
-                    </script>
+
+                        </script>
+
                     </div>
                 <div class="container-center">
-                   <a class="candbtn" href="InfoTrack.html">Voltar</a>
-                 </div>
+                    <a class="candbtn" href="InfoTrack.html">Voltar</a>
+                </div>
             </div>
         </div>
     </body>
