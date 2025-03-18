@@ -45,7 +45,7 @@
                     <input  id="nome_completo" type="text" placeholder="Nome (Aluno)" name="nome" required>
                     <script>
                         document.getElementById('nome_completo').addEventListener('input', function (e) {
-                            this.value = this.value.replace(/[0-9]/g, ''); // Remove números imediatamente
+                            this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''); // Remove números e símbolos
                         });
                         </script>
 
@@ -55,7 +55,7 @@
                     <label class="container-center" for="telefone">Telefone</label>
                     <input id="telefone" type="text" placeholder="telefone (Aluno)" name="telefone" required>
                     <script>
-                        document.getElementById("cartao_de_cidadao").addEventListener("input", function () {
+                        document.getElementById("telefone").addEventListener("input", function () {
                           if (this.value.length > 9) {
                             this.value = this.value.slice(0, 9);
                           }
@@ -70,7 +70,7 @@
 
                     <label class="container-center" for="data_de_nascimento">Data de nascimento</label>
                     <form action="/submit-date" method="post">
-                    <input type="date" id="data_de_nascimento" name="dob">
+                    <input type="date" id="data_de_nascimento" max="2025-12-31"  name="dob">
 
                     <label class="container-center" for="cartao_de_cidadao">Cartão de cidadão</label>
                     <input id="cartao_de_cidadao" type="text" placeholder="Cartão de cidadão (Aluno)" name="cc" required>
@@ -136,10 +136,8 @@
                         document.getElementById('habilitacoes').addEventListener('input', function (e) {
                             this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
                         });
-                        </script>
-                
+                        </script>  
         </div>
-            
                 </div>
                     <div class="container-center">
                     <div class="info">
@@ -228,6 +226,18 @@
                                     mostrarPopup("❌ Erro ao enviar inscrição!", false);
                                 });
                             });
+
+                            function validarData() {
+                                let inputData = document.getElementById("data").value;
+                                let dataMaxima = new Date("2025-12-31");
+                                let dataSelecionada = new Date(inputData);
+
+                                if (dataSelecionada > dataMaxima) {
+                                    alert("A data não pode ser maior que 2025!");
+                                } else {
+                                    alert("Data válida!");
+                                }
+                            }
 
                         </script>
 
