@@ -123,3 +123,38 @@ a:hover {
     text-decoration: underline;
     text-align: center;
 }
+
+
+.menu {
+    width: 200px;
+}
+.menu-header {
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+.menu-item {
+    position: relative; /* Garante que o tooltip fique posicionado em relação ao item */
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal; /* Permite quebra de linha */
+    max-width: 150px; /* Ajusta a largura máxima */
+    border: 1px solid black; /* Borda preta para destacar */
+    z-index: 10; /* Mantém sobre os outros módulos */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de sombra */
+}
+.menu-item:hover .tooltip {
+    display: block;
+}
